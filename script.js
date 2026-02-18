@@ -1,8 +1,9 @@
 // Año automático
-document.getElementById("year").textContent = new Date().getFullYear();
+const yearEl = document.getElementById("year");
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// Scroll suave para links internos (opcional, pero queda pro)
-document.querySelectorAll('a[href^="#"]').forEach(a => {
+// Scroll suave para links internos
+document.querySelectorAll('a[href^="#"]').forEach((a) => {
   a.addEventListener("click", (e) => {
     const id = a.getAttribute("href");
     if (!id || id === "#") return;
